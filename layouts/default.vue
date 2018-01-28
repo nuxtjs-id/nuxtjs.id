@@ -15,6 +15,7 @@
           router
           class="mb-4"
           :to="{name: 'index'}"
+          :replace="$route.name !== 'index'"
         >
           <v-list-tile-action class="pa-2">
             <img src="/img/icons/logo-nuxtid.png" class="max-width r shadow-max">

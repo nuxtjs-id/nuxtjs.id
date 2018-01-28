@@ -77,6 +77,9 @@
             <div class="pa-2 f-b">Gabung Komunitas</div>
             <v-divider></v-divider>
             <div class="text-xs-right pt-4">
+              <a class="d-block px-2 my-2 red--text fs-12 fls-2 float-l">
+                <v-icon class="red--text mr-2 fs-20">person_pin</v-icon> <span class="f-b">DAFTAR</span>
+              </a>
               <a class="ic-community mx-2 r shadow-max" href="https://t.me/nuxtjsid" target="_blank"><img src="/img/icons/ic-telegram.png" class="full-width"></a>
               <a class="ic-community mx-2 r shadow-max" href="https://nuxtjs-id.slack.com/" target="_blank"><img src="/img/icons/ic-slack.png" class="full-width"></a>
             </div>

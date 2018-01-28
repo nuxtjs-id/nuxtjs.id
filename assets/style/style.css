@@ -11,6 +11,9 @@ a {
 p {
     margin-bottom: 0px;
 }
+a.list__tile--active > .list__tile__action > i.material-icons {
+    color: #3ba33f !important;
+}
 .nuxtid-no-bg {
     background: none!important;
 }
@@ -216,9 +219,9 @@ input.nuxtid::-webkit-input-placeholder {
 }
 a.ic-community {
     display:inline-block;
-    padding:3px;
-    width:33px;
-    height:33px;
+    padding:2px;
+    width:27px;
+    height:27px;
     overflow:hidden;
 }
 .v-divider-v {

@@ -67,7 +67,7 @@
       <v-layout row wrap>
         <v-flex xs12 pa-3>
           <nuxt-link class="d-block mt-4 pa-4" :to="{name: 'class'}">
-            <span class="fs-18 mr-1">kelas</span> <strong class="fs-22 red--text mr-2">Gratis</strong>
+            <span class="fs-18 mr-2">kelas</span> <strong class="fs-22 red--text mr-2">Gratis</strong>
             <strong style="font-size:22px;" class="red--text">NuxtJs</strong>
           </nuxt-link>
           <blockquote class="fs-16 fls-2"><strong>Mulailah belajar</strong> sesuatu yang bermanfaat sejak dulu<br>karena hari ini masih saja seperti kemarin!</blockquote>
@@ -96,6 +96,15 @@
               </a>
               <a class="d-block px-2 my-2 green--text fs-12 fls-2" href="https://vuetifyjs.com" target="_blank">
                 <v-icon class="green--text mr-2 fs-16">launch</v-icon> <span><span class="f-b">VuetifyJs.com</span></span>
+              </a>
+            </div>
+          </div>
+          <div class="pa-2">
+            <div class="pa-2 f-b">Support</div>
+            <v-divider></v-divider>
+            <div class="text-xs-left py-3 pl-4">
+              <a class="d-block px-2 my-2 green--text fs-12 fls-2" href="mailto:nuxt.id@gmail.com">
+                <v-icon class="green--text mr-2 fs-16">mail_outline</v-icon> <span><span class="f-b">nuxt.id@gmail.com</span></span>
               </a>
             </div>
           </div>

@@ -124,6 +124,21 @@ a {
 .fs-30 {
     font-size:30px;
 }
+.fls-1 {
+    letter-spacing:.3px;
+}
+.fls-2 {
+    letter-spacing:.5px;
+}
+.fls-3 {
+    letter-spacing:1px;
+}
+.fls-3 {
+    letter-spacing:1.5px;
+}
+.fls-3 {
+    letter-spacing:2px;
+}
 
 
 .clearfix:after,
@@ -185,8 +200,9 @@ input.nuxtid::-webkit-input-placeholder {
 }
 a.ic-community {
     display:inline-block;
-    width:30px;
-    height:30px;
+    padding:3px;
+    width:33px;
+    height:33px;
     overflow:hidden;
 }
 .v-divider-v {
@@ -223,4 +239,10 @@ a.ic-community {
     width:100%;
     background:rgba(250,250,250,.16);
     margin-bottom:7px;
+}
+img.powered-by-algolia {
+    float:right;
+    width:100px;
+    margin-top:10px;
+    margin-right:10px;
 }

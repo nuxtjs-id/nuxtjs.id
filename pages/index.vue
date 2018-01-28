@@ -37,6 +37,9 @@
                 :autofocus="true"
               >
               </ais-input>
+              <a href="https://www.algolia.com" target="_blank">
+                <img src="/img/icons/powered-by-algolia.svg" class="powered-by-algolia">
+              </a>
             </ais-index>
 
           </div>
@@ -53,18 +56,33 @@
             <span class="fs-18 mr-1">kelas</span> <strong class="fs-22 red--text mr-2">Gratis</strong>
             <strong style="font-size:22px;" class="green--text">NuxtJs</strong>
           </nuxt-link>
-          <blockquote class="fs-16"><strong>Mulailah belajar</strong> sesuatu yang bermanfaat sejak dulu<br>karena hari ini masih saja seperti kemarin!</blockquote>
+          <blockquote class="fs-16 fls-2"><strong>Mulailah belajar</strong> sesuatu yang bermanfaat sejak dulu<br>karena hari ini masih saja seperti kemarin!</blockquote>
         </v-flex>
         <v-flex xs12 pa-3>
           <div class="pa-2">
             <div class="pa-2 f-b">Gabung Komunitas</div>
             <v-divider></v-divider>
-            <div class="text-xs-right py-4">
-              <a class="d-block pa-2 green--text float-l" href="https://nuxtjs.org" target="_blank">
-                <v-icon class="green--text mr-2 fs-20">launch</v-icon> <span><span class="f-b">NuxtJs</span> Official Docs</span> <strong class="ml-2">Bahasa Indonesia</strong>
-              </a>
+            <div class="text-xs-right pt-4">
               <a class="ic-community mx-2 r shadow-max" href="https://t.me/nuxtjsid" target="_blank"><img src="/img/icons/ic-telegram.png" class="full-width"></a>
               <a class="ic-community mx-2 r shadow-max" href="https://nuxtjs-id.slack.com/" target="_blank"><img src="/img/icons/ic-slack.png" class="full-width"></a>
+            </div>
+          </div>
+          <div class="pa-2">
+            <div class="pa-2 f-b">Referensi</div>
+            <v-divider></v-divider>
+            <div class="text-xs-right py-3 pl-4">
+              <a class="d-block px-2 my-2 green--text fs-12 fls-2 float-l" href="https://nuxtjs.org" target="_blank">
+                <v-icon class="green--text mr-2 fs-16">launch</v-icon> <span><span class="f-b">NuxtJs</span> Docs</span> <strong class="ml-2">&sdot; Bahasa Indonesia</strong>
+              </a>
+              <a class="d-block px-2 my-2 green--text fs-12 fls-2" href="https://nuxtjs.org" target="_blank">
+                <v-icon class="green--text mr-2 fs-16">launch</v-icon> <span><span class="f-b">NuxtJs.org</span></span>
+              </a>
+              <a class="d-block px-2 my-2 green--text fs-12 fls-2" href="https://vuejs.org" target="_blank">
+                <v-icon class="green--text mr-2 fs-16">launch</v-icon> <span><span class="f-b">VueJs.org</span></span>
+              </a>
+              <a class="d-block px-2 my-2 green--text fs-12 fls-2" href="https://vuetifyjs.com" target="_blank">
+                <v-icon class="green--text mr-2 fs-16">launch</v-icon> <span><span class="f-b">VuetifyJs.com</span></span>
+              </a>
             </div>
           </div>
         </v-flex>

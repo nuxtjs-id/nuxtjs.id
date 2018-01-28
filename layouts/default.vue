@@ -44,7 +44,7 @@
     <v-toolbar fixed app :clipped-left="true" class="elevation-0 nuxtid-no-bg">
       <v-toolbar-side-icon @click="drawer = !drawer" :class="{'ml-100': drawer === true }"></v-toolbar-side-icon>
       <v-spacer></v-spacer>
-      <v-toolbar-title v-text="title" class="green--text"></v-toolbar-title>
+      <v-toolbar-title><nuxt-link :to="{name: 'index'}" class="green--text">{{ title }}</nuxt-link></v-toolbar-title>
     </v-toolbar>
     <v-content>
       <v-container fluid fill-height class="full-bg-cover" style="background-image: url(/img/indonesia-map.png)">
@@ -53,7 +53,7 @@
     </v-content>
     <v-footer app>
       <v-spacer></v-spacer>
-      <span>&copy; 2017</span>
+      <span>&copy; 2018</span>
     </v-footer>
   </v-app>
 </template>

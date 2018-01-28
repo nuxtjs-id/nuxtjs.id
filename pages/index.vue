@@ -44,8 +44,8 @@
               <a class="d-block pa-2 green--text float-l" href="https://nuxtjs.org" target="_blank">
                 <v-icon class="green--text mr-2 fs-20">launch</v-icon> <span><span class="f-b">NuxtJs</span> Official Docs</span> <strong class="ml-2">Bahasa Indonesia</strong>
               </a>
-              <a class="ic-community mx-2 r shadow-max"><img src="/img/icons/ic-telegram.png" class="full-width"></a>
-              <a class="ic-community mx-2 r shadow-max"><img src="/img/icons/ic-slack.png" class="full-width"></a>
+              <a class="ic-community mx-2 r shadow-max" href="https://t.me/nuxtjsid"><img src="/img/icons/ic-telegram.png" class="full-width"></a>
+              <a class="ic-community mx-2 r shadow-max" href="https://nuxtjs-id.slack.com/" target="_blank"><img src="/img/icons/ic-slack.png" class="full-width"></a>
             </div>
           </div>
         </v-flex>

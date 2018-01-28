@@ -13,7 +13,7 @@
           <div class="p-relative">
 
             <div
-              class="nuxtid-algolia-init shadow-max"  
+              class="nuxtid-algolia-init elevation-1"  
               v-show="AlgoliaQuery === ''"
             >
               Halo, kamu bisa menjelajahi <strong>NuxtJs</strong> disini.
@@ -22,18 +22,18 @@
               :search-store="searchStore"
               >
               <ais-results
-                class="mb-3"
+                class="mb-2"
                 v-show="AlgoliaQuery !== ''"
               >
                 <template slot-scope="{ result }">
-                  <div class="nuxtid-algolia-list shadow-max">
+                  <div class="nuxtid-algolia-list elevation-1">
                     {{ result.title }}
                   </div>
                 </template>
               </ais-results>
               <ais-input
-                placeholder="NuxtJs ?"
-                class="nuxtid shadow-max"
+                placeholder="contoh: nuxt"
+                class="nuxtid elevation-3"
                 :autofocus="true"
               >
               </ais-input>

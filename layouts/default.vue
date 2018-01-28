@@ -10,7 +10,7 @@
       hide-overlay
       class="nuxtid-no-bg shadow-max z-max"
     >
-      <v-list>
+      <v-list @click.native="toggleDrawer()">
         <v-list-tile
           router
           class="mb-4"
@@ -29,7 +29,7 @@
           :to="{name: item.to}"
           :key="i"
           v-for="(item, i) in items"
-          replace
+          :replace="$route.name !== 'index'"
           exact
         >
             <v-list-tile-action>
@@ -80,13 +80,41 @@
       console.log('')
     },
     mounted () {
-      this.onResize()
-      this.drawer = true
+      let _self = this
+      _self.onResize()
+      _self.drawer = true
     },
     methods: {
       onResize () {
         let _self = this
         _self.$store.state.isMobile = window.innerWidth < 769
+        if (_self.$store.state.isMobile) {
+          _self.$store.state.loading.top = '28px'
+          _self.$store.state.loading.left = '55px'
+        } else {
+          _self.$store.state.loading.top = '32px'
+          _self.$store.state.loading.left = '135px'
+        }
+      },
+      toggleDrawer () {
+        let _self = this
+        if (_self.$store.state.isMobile) {
+          _self.drawer = false
+        }
+      }
+    },
+    watch: {
+      '$route' (to, from) {
+        let _self = this
+        if (_self.drawer && _self.$store.state.isMobile) {
+          _self.$store.state.loading.left = '137px'
+        } else if (!_self.drawer && _self.$store.state.isMobile) {
+          _self.$store.state.loading.left = '55px'
+        } else if (_self.drawer && !_self.$store.state.isMobile) {
+          _self.$store.state.loading.left = '135px'
+        } else if (!_self.drawer && !_self.$store.state.isMobile) {
+          _self.$store.state.loading.left = '43px'
+        }
       }
     }
   }

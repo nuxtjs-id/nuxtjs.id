@@ -1,7 +1,11 @@
 export const strict = false
 
 export const state = () => ({
-  isMobile: false
+  isMobile: false,
+  loading: {
+    top: '32px',
+    left: '135px'
+  }
 })
 
 export const mutations = {

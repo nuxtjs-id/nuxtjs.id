@@ -23,14 +23,12 @@ module.exports = {
   /*
   ** Customize the progress bar color
   */
-  loading: { color: '#FF0000' },
+  loading: '~/components/loading.vue',
   /*
   ** Build configuration
   */
   build: {
-    vendor: [
-      '~/plugins/vuetify.js'
-    ],
+    vendor: [],
     extractCSS: true,
     /*
     ** Run ESLint on save

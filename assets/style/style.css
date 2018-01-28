@@ -198,10 +198,13 @@ a.ic-community {
 .d-block {
     display: block!important;
 }
+.p-relative {
+    position: relative;
+}
 .float-l {
     float:left;
 }
-.nuxtid-chat-list {
+.nuxtid-algolia-init {
     position:absolute;
     left:0px;
     bottom:70px;
@@ -211,4 +214,13 @@ a.ic-community {
     border-radius:5px;
     width:100%;
     background:rgba(220,220,220,.18);
+}
+.nuxtid-algolia-list {
+    padding:12px 15px;
+    letter-spacing:.3px;
+    box-sizing:border-box;
+    border-radius:5px;
+    width:100%;
+    background:rgba(220,220,220,.18);
+    margin-bottom:5px;
 }

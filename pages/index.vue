@@ -10,16 +10,35 @@
         </v-flex>
         <v-flex xs12></v-flex>
         <v-flex offset :class="{'px-3': !$store.state.isMobile, 'px-1': $store.state.isMobile}">
-          <div style="position:relative;">
-            <div class="nuxtid-chat-list shadow-max">
-              Halo, kamu bisa menanyakan seputar <strong>NuxtJs</strong> disini.
-            </div>
-            <input
-              type="text"
-              placeholder="NuxtJs ?"
-              class="nuxtid shadow-max"
-              autofocus
+          <div class="p-relative">
+
+            <div
+              class="nuxtid-algolia-init shadow-max"  
+              v-show="AlgoliaQuery === ''"
             >
+              Halo, kamu bisa menjelajahi <strong>NuxtJs</strong> disini.
+            </div>
+            <ais-index
+              :search-store="searchStore"
+              >
+              <ais-results
+                class="mb-3"
+                v-show="AlgoliaQuery !== ''"
+              >
+                <template slot-scope="{ result }">
+                  <div class="nuxtid-algolia-list shadow-max">
+                    {{ result.title }}
+                  </div>
+                </template>
+              </ais-results>
+              <ais-input
+                placeholder="NuxtJs ?"
+                class="nuxtid shadow-max"
+                :autofocus="true"
+              >
+              </ais-input>
+            </ais-index>
+
           </div>
         </v-flex>
       </v-layout>
@@ -44,7 +63,7 @@
               <a class="d-block pa-2 green--text float-l" href="https://nuxtjs.org" target="_blank">
                 <v-icon class="green--text mr-2 fs-20">launch</v-icon> <span><span class="f-b">NuxtJs</span> Official Docs</span> <strong class="ml-2">Bahasa Indonesia</strong>
               </a>
-              <a class="ic-community mx-2 r shadow-max" href="https://t.me/nuxtjsid"><img src="/img/icons/ic-telegram.png" class="full-width"></a>
+              <a class="ic-community mx-2 r shadow-max" href="https://t.me/nuxtjsid" target="_blank"><img src="/img/icons/ic-telegram.png" class="full-width"></a>
               <a class="ic-community mx-2 r shadow-max" href="https://nuxtjs-id.slack.com/" target="_blank"><img src="/img/icons/ic-slack.png" class="full-width"></a>
             </div>
           </div>
@@ -53,3 +72,31 @@
     </v-flex>
   </v-layout>
 </template>
+
+<script>
+import { createFromAlgoliaCredentials } from 'vue-instantsearch'
+const searchStore = createFromAlgoliaCredentials(
+  'RUBLDJBYZN',
+  'edfc7e38b8b2115e190c1073834c1324'
+)
+searchStore.indexName = 'main'
+
+export default {
+  data () {
+    return {
+      searchStore,
+      AlgoliaQuery: ''
+    }
+  },
+  mounted () {
+    let _self = this
+    _self.AlgoliaQuery = ''
+  },
+  watch: {
+    'searchStore.query' (q) {
+      let _self = this
+      _self.AlgoliaQuery = q
+    }
+  }
+}
+</script>

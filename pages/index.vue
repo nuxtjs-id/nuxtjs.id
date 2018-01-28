@@ -8,32 +8,46 @@
           </h1>
           <p class="pa-3 nuxtid-desc text-xs-right">Pelajari secara <strong class="f-n mr-1">mudah</strong> <strong class="f-b">NuxtJs</strong> disini</p>
         </v-flex>
-        <v-flex xs12></v-flex>
+        <v-flex xs12>
+          <div class="nuxtid-result-view"
+            :class="{'pa-1': $store.state.isMobile, 'pa-3': !$store.state.isMobile}"
+            v-show="ShowContent.active"
+          >
+            <div class=" elevation-2 pa-2 white r5">
+              <div class="nuxtid-result-view-title">{{ ShowContent.title }}</div>
+              <div class="nuxtid-result-view-content" v-html="ShowContent.content"></div>
+            </div>
+          </div>
+        </v-flex>
         <v-flex offset :class="{'px-3': !$store.state.isMobile, 'px-1': $store.state.isMobile}">
           <div class="p-relative">
 
             <div
               class="nuxtid-algolia-init elevation-1"  
-              v-show="AlgoliaQuery === ''"
+              v-show="AlgoliaQuery === '' && !ShowContent.active"
             >
               Halo, kamu bisa menjelajahi <strong>NuxtJs</strong> disini.
             </div>
+
             <ais-index
               :search-store="searchStore"
               >
               <ais-results
                 class="mb-2"
-                v-show="AlgoliaQuery !== ''"
+                v-show="AlgoliaQuery !== '' && !ShowContent.active"
               >
                 <template slot-scope="{ result }">
-                  <div class="nuxtid-algolia-list elevation-1">
+                  <div
+                    class="nuxtid-algolia-list elevation-1"
+                    @click="toggleShowContent(result.title)"
+                  >
                     {{ result.title }}
                   </div>
                 </template>
               </ais-results>
               <ais-input
                 placeholder="contoh: nuxt"
-                class="nuxtid elevation-3"
+                class="nuxtid elevation-1"
                 :autofocus="true"
               >
               </ais-input>
@@ -54,7 +68,7 @@
         <v-flex xs12 pa-3>
           <nuxt-link class="d-block mt-4 pa-4" :to="{name: 'class'}">
             <span class="fs-18 mr-1">kelas</span> <strong class="fs-22 red--text mr-2">Gratis</strong>
-            <strong style="font-size:22px;" class="green--text">NuxtJs</strong>
+            <strong style="font-size:22px;" class="red--text">NuxtJs</strong>
           </nuxt-link>
           <blockquote class="fs-16 fls-2"><strong>Mulailah belajar</strong> sesuatu yang bermanfaat sejak dulu<br>karena hari ini masih saja seperti kemarin!</blockquote>
         </v-flex>
@@ -103,17 +117,32 @@ export default {
   data () {
     return {
       searchStore,
-      AlgoliaQuery: ''
+      AlgoliaQuery: '',
+      ShowContent: {
+        active: false,
+        cid: '',
+        title: '',
+        content: ''
+      }
     }
   },
   mounted () {
     let _self = this
     _self.AlgoliaQuery = ''
   },
+  methods: {
+    toggleShowContent (cid) {
+      let _self = this
+      _self.ShowContent.title = cid
+      _self.ShowContent.content = '<p>Sed ut perspiciatis unde omnis iste natusLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Sed ut perspiciatis unde omnis iste natusLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Sed ut perspiciatis unde omnis iste natusLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.</p>'
+      _self.ShowContent.active = true
+    }
+  },
   watch: {
     'searchStore.query' (q) {
       let _self = this
       _self.AlgoliaQuery = q
+      _self.ShowContent.active = false
     }
   }
 }

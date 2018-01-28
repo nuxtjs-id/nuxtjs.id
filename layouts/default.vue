@@ -48,12 +48,12 @@
     </v-toolbar>
     <v-content>
       <v-container fluid fill-height class="full-bg-cover" style="background-image: url(/img/indonesia-map.png)">
-        <nuxt />
+        <nuxt keep-alive/>
       </v-container>
     </v-content>
     <v-footer app>
       <v-spacer></v-spacer>
-      <span>&copy; 2018</span>
+      <span>NuxtJs Indonesia &copy; 2018</span>
     </v-footer>
   </v-app>
 </template>

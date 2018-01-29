@@ -142,11 +142,44 @@ a.list__tile--active > .list__tile__action > i.material-icons {
 .fls-3 {
     letter-spacing:1px;
 }
-.fls-3 {
+.fls-4 {
     letter-spacing:1.5px;
 }
-.fls-3 {
+.fls-5 {
     letter-spacing:2px;
+}
+.fls-6 {
+    letter-spacing:3px;
+}
+.fls-7 {
+    letter-spacing:5px;
+}
+.line-xs-center {
+    width:50px;
+    margin:0 auto;
+}
+.line-md-center {
+    width:150px;
+    margin:0 auto;
+}
+.line-lg-center {
+    width:250px;
+    margin:0 auto;
+}
+.line-height-1 {
+    line-height: 100%;
+}
+.line-height-2 {
+    line-height: 150%;
+}
+.line-height-3 {
+    line-height: 170%;
+}
+.line-height-4 {
+    line-height: 200%;
+}
+.line-height-5 {
+    line-height: 230%;
 }
 
 

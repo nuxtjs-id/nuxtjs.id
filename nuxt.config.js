@@ -15,7 +15,7 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700|Material+Icons' }
     ]
   },
-  plugins: ['~/plugins/vuetify.js', {src: '~/plugins/algoliasearch.js', ssr: false}],
+  plugins: ['~/plugins/vuetify.js', {src: '~/plugins/algoliasearch.js'}],
   css: [
     '~/assets/style/app.styl',
     '~/assets/style/style.css'

@@ -8,7 +8,8 @@
       app
       disable-route-watcher
       hide-overlay
-      class="nuxtid-no-bg shadow-max z-max"
+      class="shadow-max z-max"
+      :class="{'nuxtid-no-bg': !$store.state.isMobile, 'white': $store.state.isMobile}"
     >
       <v-list @click.native="toggleDrawer()">
         <v-list-tile

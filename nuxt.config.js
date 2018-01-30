@@ -18,7 +18,11 @@ module.exports = {
       { name: 'msapplication-tap-highlight', content: 'no' },
       { name: 'msapplication-TileColor', content: '#fafafa' },
       { name: 'mobile-web-app-capable', content: 'yes' },
-      { name: 'msapplication-TileImage', content: '/img/icons/nuxt-indonesia-96.png' }
+      { name: 'msapplication-TileImage', content: '/img/icons/nuxt-indonesia-96.png' },
+      { property: 'og:title', content: 'NuxtJs.id - Komunitas NuxtJs Indonesia' },
+      { property: 'og:site_name', content: 'NuxtJs.id' },
+      { property: 'og:description', content: 'NuxtJs.id - Web Portal Komunitas NuxtJs Indonesia' },
+      { property: 'og:image', content: '/img/icons/nuxt-indonesia-512.png' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },

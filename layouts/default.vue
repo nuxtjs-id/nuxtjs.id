@@ -19,7 +19,7 @@
           :replace="$route.name !== 'index'"
         >
           <v-list-tile-action class="pa-2">
-            <img src="/img/icons/logo-nuxtid.png" class="max-width r shadow-max" alt="NuxtJs.id - Komunitas NuxtJs Indonesia">
+            <img :src="require('~/assets/img/logo-nuxtid.png')" class="max-width r shadow-max" alt="NuxtJs.id - Komunitas NuxtJs Indonesia">
           </v-list-tile-action>
           <v-list-tile-content>
             <v-list-tile-title>NuxtJs.id</v-list-tile-title>
@@ -49,7 +49,7 @@
       <v-toolbar-title><nuxt-link :to="{name: 'index'}" class="green--text" :replace="$route.name !== 'index'">{{ title }}</nuxt-link></v-toolbar-title>
     </v-toolbar>
     <v-content>
-      <v-container fluid fill-height class="full-bg-cover" style="background-image: url(/img/indonesia-map.png)">
+      <v-container fluid fill-height class="full-bg-cover" :style="{'background-image': 'url(' + require('~/assets/img/indonesia-map.png') + ')'}">
         <nuxt keep-alive/>
       </v-container>
     </v-content>

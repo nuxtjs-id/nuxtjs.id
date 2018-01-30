@@ -23,7 +23,7 @@
           <div class="p-relative">
 
             <div
-              class="nuxtid-algolia-init elevation-1"  
+              class="nuxtid-algolia-init elevation-1 white"  
               v-show="AlgoliaQuery === '' && !ShowContent.active"
             >
               Halo, kamu bisa menjelajahi <strong>NuxtJs</strong> disini.
@@ -60,10 +60,10 @@
         </v-flex>
       </v-layout>
     </v-flex>
-    <v-flex xs12 md1 py-4 v-if="!$store.state.isMobile">
+    <v-flex xs12 md1 py-4 v-show="!$store.state.isMobile">
       <div class="v-divider-v"></div>
     </v-flex>
-    <v-flex xs12 md5 v-if="!$store.state.isMobile">
+    <v-flex xs12 md5 v-show="!$store.state.isMobile">
       <v-layout row wrap>
         <v-flex xs12 pa-3>
           <nuxt-link class="d-block mt-4 pa-4" :to="{name: 'class'}">

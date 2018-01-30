@@ -14,6 +14,10 @@ p {
 a.list__tile--active > .list__tile__action > i.material-icons {
     color: #3ba33f !important;
 }
+.application {
+    font-family: 'Open Sans', sans-serif!important;
+    line-height: 1.5;
+}
 .nuxtid-no-bg {
     background: none!important;
 }
@@ -329,4 +333,11 @@ img.powered-by-algolia {
     width:100px;
     margin-top:10px;
     margin-right:10px;
+}
+.nuxtid-class.basic,.nuxtid-class.intermediate,.nuxtid-class.expert {
+    transition: all .1s ease-in-out;
+    cursor:pointer;
+}
+.nuxtid-class.basic:hover,.nuxtid-class.intermediate:hover,.nuxtid-class.expert:hover {
+    transform: scale(1.03);
 }

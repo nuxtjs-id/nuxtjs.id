@@ -1,5 +1,5 @@
 <template>
-  <v-app light class="nuxtid-no-main" v-resize="onResize">
+  <v-app light class="nuxtid-no-main" v-resize="onResize" v-scroll="onScroll">
     <v-navigation-drawer
       :mini-variant="true"
       :clipped="false"
@@ -43,10 +43,10 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar fixed app :clipped-left="true" class="elevation-0 nuxtid-no-bg">
+    <v-toolbar fixed app :clipped-left="true" class="elevation-0 nuxtid-no-bg" :class="{'elevation-3': $store.state.scrollTop > 32 && $store.state.isMobile}">
       <v-toolbar-side-icon @click="drawer = !drawer" :class="{'ml-100': drawer === true }"></v-toolbar-side-icon>
       <v-spacer></v-spacer>
-      <v-toolbar-title><nuxt-link :to="{name: 'index'}" class="green--text">{{ title }}</nuxt-link></v-toolbar-title>
+      <v-toolbar-title><nuxt-link :to="{name: 'index'}" class="green--text" :replace="$route.name !== 'index'">{{ title }}</nuxt-link></v-toolbar-title>
     </v-toolbar>
     <v-content>
       <v-container fluid fill-height class="full-bg-cover" style="background-image: url(/img/indonesia-map.png)">
@@ -97,6 +97,10 @@
           _self.$store.state.loading.top = '32px'
           _self.$store.state.loading.left = '135px'
         }
+      },
+      onScroll (e) {
+        let _self = this
+        _self.$store.state.scrollTop = window.pageYOffset || document.documentElement.scrollTop
       },
       toggleDrawer () {
         let _self = this

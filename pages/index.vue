@@ -51,8 +51,8 @@
                 :autofocus="true"
               >
               </ais-input>
-              <a href="https://www.algolia.com" target="_blank">
-                <img src="/img/icons/powered-by-algolia.svg" class="powered-by-algolia">
+              <a href="https://www.algolia.com" target="_blank" rel="noopener">
+                <img src="/img/icons/powered-by-algolia.svg" class="powered-by-algolia" alt="Algolia Search">
               </a>
             </ais-index>
 
@@ -80,24 +80,24 @@
               <a class="d-block px-2 my-2 red--text fs-12 fls-2 float-l">
                 <v-icon class="red--text mr-2 fs-20">person_pin</v-icon> <span class="f-b fls-5">DAFTAR</span>
               </a>
-              <a class="ic-community mx-2 r shadow-max" href="https://t.me/nuxtjsid" target="_blank"><img src="/img/icons/ic-telegram.png" class="full-width"></a>
-              <a class="ic-community mx-2 r shadow-max" href="https://nuxtjs-id.slack.com/" target="_blank"><img src="/img/icons/ic-slack.png" class="full-width"></a>
+              <a class="ic-community mx-2 r shadow-max" href="https://t.me/nuxtjsid" target="_blank" rel="noopener"><img src="/img/icons/ic-telegram.png" class="full-width"></a>
+              <a class="ic-community mx-2 r shadow-max" href="https://nuxtjs-id.slack.com/" target="_blank" rel="noopener"><img src="/img/icons/ic-slack.png" class="full-width"></a>
             </div>
           </div>
           <div class="pa-2">
             <div class="pa-2 f-b">Referensi</div>
             <v-divider></v-divider>
             <div class="text-xs-right py-3 pl-4">
-              <a class="d-block px-2 my-2 green--text fs-12 fls-2 float-l" href="https://nuxtjs.org" target="_blank">
+              <a class="d-block px-2 my-2 green--text fs-12 fls-2 float-l" href="https://nuxtjs.org" target="_blank" rel="noopener">
                 <v-icon class="green--text mr-2 fs-16">launch</v-icon> <span><span class="f-b">NuxtJs</span> Docs</span> <strong class="ml-2">&sdot; Bahasa Indonesia</strong>
               </a>
-              <a class="d-block px-2 my-2 green--text fs-12 fls-2" href="https://nuxtjs.org" target="_blank">
+              <a class="d-block px-2 my-2 green--text fs-12 fls-2" href="https://nuxtjs.org" target="_blank" rel="noopener">
                 <v-icon class="green--text mr-2 fs-16">launch</v-icon> <span><span class="f-b">NuxtJs.org</span></span>
               </a>
-              <a class="d-block px-2 my-2 green--text fs-12 fls-2" href="https://vuejs.org" target="_blank">
+              <a class="d-block px-2 my-2 green--text fs-12 fls-2" href="https://vuejs.org" target="_blank" rel="noopener">
                 <v-icon class="green--text mr-2 fs-16">launch</v-icon> <span><span class="f-b">VueJs.org</span></span>
               </a>
-              <a class="d-block px-2 my-2 green--text fs-12 fls-2" href="https://vuetifyjs.com" target="_blank">
+              <a class="d-block px-2 my-2 green--text fs-12 fls-2" href="https://vuetifyjs.com" target="_blank" rel="noopener">
                 <v-icon class="green--text mr-2 fs-16">launch</v-icon> <span><span class="f-b">VuetifyJs.com</span></span>
               </a>
             </div>

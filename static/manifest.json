@@ -1,0 +1,53 @@
+{
+  "short_name": "NuxtJs.id",
+  "name": "NuxtJs Indonesia",
+  "description": "NuxtJs.id - Komunitas NuxtJs Indonesia",
+  "start_url": "/?utm_source=web_app_manifest",
+  "theme_color": "#fafafa",
+  "background_color": "#fafafa",
+  "display": "standalone",
+  "orientation": "portrait",
+  "lang": "id",
+  "icons": [
+    {
+      "src": "/img/icons/nuxt-indonesia-48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    }, {
+      "src": "/img/icons/nuxt-indonesia-72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    }, {
+      "src": "/img/icons/nuxt-indonesia-96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }, {
+      "src": "/img/icons/nuxt-indonesia-144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }, {
+      "src": "/img/icons/nuxt-indonesia-168.png",
+      "sizes": "168x168",
+      "type": "image/png"
+    }, {
+      "src": "/img/icons/nuxt-indonesia-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },  
+    {  
+      "src": "/img/icons/nuxt-indonesia-256.png",
+      "sizes": "256x256",  
+      "type": "image/png"  
+    },  
+    {  
+      "src": "/img/icons/nuxt-indonesia-384.png",
+      "sizes": "384x384",  
+      "type": "image/png"  
+    },  
+    {  
+      "src": "/img/icons/nuxt-indonesia-512.png",
+      "sizes": "512x512",  
+      "type": "image/png"  
+    }
+  ]
+}

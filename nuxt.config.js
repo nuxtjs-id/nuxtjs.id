@@ -3,16 +3,27 @@ module.exports = {
   /*
   ** Headers of the page
   */
+  htmlAttrs: {
+    lang: 'id'
+  },
   head: {
-    title: 'NuxtJs.id - NuxtJs Indonesia',
+    title: 'NuxtJs.id - Komunitas NuxtJs Indonesia',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.id - Web Portal Nuxt Indonesia' }
+      { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' },
+      { hid: 'keywords', name: 'keywords', content: 'nuxtjs,nuxtjs indonesia,nuxtjs.id,nuxtjs community indonesia,komunitas nuxtjs indonesia,indonesia,javascript' },
+      { hid: 'description', name: 'description', content: 'Nuxt.id - Komunitas NuxtJs Indonesia' },
+      { name: 'orientation', content: 'potrait' },
+      { name: 'theme-color', content: '#fafafa' },
+      { name: 'msapplication-tap-highlight', content: 'no' },
+      { name: 'msapplication-TileColor', content: '#fafafa' },
+      { name: 'mobile-web-app-capable', content: 'yes' },
+      { name: 'msapplication-TileImage', content: '/img/icons/nuxt-indonesia-96.png' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700|Material+Icons' }
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700|Material+Icons' },
+      { rel: 'manifest', href: '/manifest.json' }
     ]
   },
   plugins: ['~/plugins/vuetify.js', {src: '~/plugins/algoliasearch.js'}],

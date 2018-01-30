@@ -19,7 +19,7 @@
           :replace="$route.name !== 'index'"
         >
           <v-list-tile-action class="pa-2">
-            <img src="/img/icons/logo-nuxtid.png" class="max-width r shadow-max">
+            <img src="/img/icons/logo-nuxtid.png" class="max-width r shadow-max" alt="NuxtJs.id - Komunitas NuxtJs Indonesia">
           </v-list-tile-action>
           <v-list-tile-content>
             <v-list-tile-title>NuxtJs.id</v-list-tile-title>

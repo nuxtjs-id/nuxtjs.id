@@ -156,6 +156,17 @@ export default {
       let _self = this
       _self.AlgoliaQuery = q
       _self.ShowContent.active = false
+    },
+    'AlgoliaQuery' () {
+      let _self = this
+      if (_self.AlgoliaQuery.length > 1) {
+        window.scrollTo(0, parseInt(document.body.scrollHeight) - (parseInt(document.body.scrollHeight) - 100))
+      }
+    },
+    'ShowContent.active' (v) {
+      if (!v) {
+        window.scrollTo(0, parseInt(document.body.scrollHeight) - (parseInt(document.body.scrollHeight) - 100))
+      }
     }
   }
 }

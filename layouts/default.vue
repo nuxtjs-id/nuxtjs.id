@@ -68,7 +68,7 @@
         title: 'nuxtjs.id',
         items: [
           { icon: 'school', title: 'Kelas NuxtJs', to: 'class' },
-          { icon: 'people_outline', title: 'Account', to: 'account' },
+          { icon: 'people_outline', title: 'Account', to: 'accounts' },
           { icon: 'card_travel', title: 'Jobs', to: 'jobs' },
           { icon: 'info_outline', title: 'Info', to: 'info' }
         ]

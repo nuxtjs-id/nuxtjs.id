@@ -159,19 +159,17 @@ export default {
     },
     'AlgoliaQuery' () {
       let _self = this
-      if (_self.AlgoliaQuery.length > 1) {
-        if (_self.$store.state.isMobile) {
-          window.scrollTo(0, parseInt(document.body.scrollHeight) - (parseInt(document.body.scrollHeight) - 125))
-        } else {
-          window.scrollTo(0, parseInt(document.body.scrollHeight) - (parseInt(document.body.scrollHeight)))
-        }
+      if (_self.$store.state.isMobile) {
+        window.scrollTo(0, parseInt(document.body.scrollHeight) - (parseInt(document.body.scrollHeight) - 133))
+      } else {
+        window.scrollTo(0, parseInt(document.body.scrollHeight) - (parseInt(document.body.scrollHeight)))
       }
     },
     'ShowContent.active' (v) {
       let _self = this
       if (!v) {
         if (_self.$store.state.isMobile) {
-          window.scrollTo(0, parseInt(document.body.scrollHeight) - (parseInt(document.body.scrollHeight) - 125))
+          window.scrollTo(0, parseInt(document.body.scrollHeight) - (parseInt(document.body.scrollHeight) - 133))
         } else {
           window.scrollTo(0, parseInt(document.body.scrollHeight) - (parseInt(document.body.scrollHeight)))
         }

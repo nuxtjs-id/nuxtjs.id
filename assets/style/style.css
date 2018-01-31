@@ -276,6 +276,9 @@ a.ic-community {
 .float-l {
     float:left;
 }
+.c-pointer {
+    cursor: pointer;
+}
 .nuxtid-algolia-init {
     position:absolute;
     left:0px;

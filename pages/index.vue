@@ -16,6 +16,7 @@
             <div class=" elevation-2 pa-2 white r5">
               <div class="nuxtid-result-view-title c-pointer" @click="ShowContent.active = false"><v-icon class="fs-20 mr-2">arrow_back</v-icon> {{ ShowContent.title }}</div>
               <div class="nuxtid-result-view-content" v-html="ShowContent.content"></div>
+              <div class="nuxtid-result-view-title c-pointer" @click="ShowContent.active = false" v-if="$store.state.isMobile"><v-icon class="fs-20 mr-2">arrow_back</v-icon> Back</div>
             </div>
           </div>
         </v-flex>

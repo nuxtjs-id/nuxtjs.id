@@ -3,10 +3,10 @@ module.exports = {
   /*
   ** Headers of the page
   */
-  htmlAttrs: {
-    lang: 'id'
-  },
   head: {
+    htmlAttrs: {
+      lang: 'id'
+    },
     title: 'NuxtJs.id - Komunitas NuxtJs Indonesia',
     meta: [
       { charset: 'utf-8' },

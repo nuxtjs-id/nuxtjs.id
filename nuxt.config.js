@@ -30,18 +30,29 @@ module.exports = {
       { rel: 'manifest', href: '/manifest.json' }
     ]
   },
+
+  /**
+   * Import Plugin
+   */
   plugins: ['~/plugins/vuetify.js', {src: '~/plugins/algoliasearch.js'}],
+
+  /**
+   * Import CSS
+   */
   css: [
     '~/assets/style/app.styl',
-    '~/assets/style/style.css'
+    '~/assets/style/style.css',
+    { src: '~/assets/scss/main.scss', lang: 'scss' }
   ],
-  /*
-  ** Customize the progress bar color
-  */
+
+  /**
+   * Loading Component
+   */
   loading: '~/components/loading.vue',
-  /*
-  ** Build configuration
-  */
+
+  /**
+   * Build configuration
+   */
   build: {
     vendor: [],
     extractCSS: true,
@@ -49,12 +60,35 @@ module.exports = {
     ** Run ESLint on save
     */
     extend (config, ctx) {
-      if (ctx.isDev && ctx.isClient) {
+      if (ctx.isDev && ctx.client) {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
           exclude: /(node_modules)/
+        })
+
+        const vueLoader = config.module.rules.find(
+          ({loader}) => loader === 'vue-loader')
+        const { options: {loaders} } = vueLoader || { options: {} }
+        if (loaders) {
+          for (const loader of Object.values(loaders)) {
+            changeLoaderOptions(Array.isArray(loader) ? loader : [loader])
+          }
+        }
+        config.module.rules.forEach(rule => changeLoaderOptions(rule.use))
+        // console.log(util.inspect(config.module.rules, { depth: 6 }))
+      }
+    }
+  }
+}
+
+function changeLoaderOptions (loaders) {
+  if (loaders) {
+    for (const loader of loaders) {
+      if (loader.loader === 'sass-loader') {
+        Object.assign(loader.options, {
+          includePaths: ['./assets']
         })
       }
     }

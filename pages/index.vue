@@ -27,7 +27,10 @@
           </div>
         </v-flex>
         </v-fade-transition>
-        <v-flex offset class="m" :class="{'px-3': !$store.state.isMobile, 'px-1': $store.state.isMobile}">
+        <v-flex
+          offset
+          class="m"
+          :class="{'px-3': !$store.state.isMobile, 'px-1': $store.state.isMobile, 'fh': AlgoliaQuery !== '' && !ShowContent.active}">
           <div class="p-relative">
 
             <div
@@ -56,7 +59,6 @@
               <ais-input
                 placeholder="contoh: nuxt"
                 class="nuxtid elevation-1"
-                :autofocus="true"
               >
               </ais-input>
               <a href="https://www.algolia.com" target="_blank" rel="noopener">

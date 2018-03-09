@@ -376,9 +376,24 @@ span.close-right-view {
         padding: 5px 0px;
         left: 0px;
         width: 100%;
+        display: table;
         background: #fafafa;
         background: rgba(255,255,255,.9);
         z-index: 10;
+    }
+    div.flex.m.fh {
+        height: 100%;
+    }
+    div.flex.m > div.p-relative {
+        display: table-cell;
+        text-align: center;
+        vertical-align: bottom;
+    }
+    div.flex.m > div.p-relative > div.nuxtid-algolia-init {
+        bottom: 90px;
+    }
+    div.flex.m > div.p-relative > div.ais-index > div.ais-results {
+        margin-bottom: 12px!important;
     }
     div.flex.search-result.xs12 {
         position: fixed;
@@ -406,6 +421,7 @@ span.close-right-view {
     }
     div.flex.search-result.xs12 > .nuxtid-result-view > div {
         height: 100%;
+        overflow-y: auto;
     }
     .btn-open-right {
         display: block;

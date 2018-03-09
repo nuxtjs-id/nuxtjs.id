@@ -98,7 +98,7 @@
             <div class="pa-2 f-b">Referensi</div>
             <v-divider></v-divider>
             <div class="text-xs-right py-3 pl-4">
-              <a class="d-block px-2 my-2 green--text fs-12 fls-2 float-l" href="https://nuxtjs.org" target="_blank" rel="noopener">
+              <a class="d-block px-2 my-2 green--text fs-12 fls-2" :class="{'float-l': !$store.state.isMobile}" href="https://nuxtjs.org" target="_blank" rel="noopener">
                 <v-icon class="green--text mr-2 fs-16">launch</v-icon> <span><span class="f-b">NuxtJs</span> Docs</span> <strong class="ml-2">&sdot; Bahasa Indonesia</strong>
               </a>
               <a class="d-block px-2 my-2 green--text fs-12 fls-2" href="https://nuxtjs.org" target="_blank" rel="noopener">

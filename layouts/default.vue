@@ -53,10 +53,10 @@
         <nuxt keep-alive/>
       </v-container>
     </v-content>
-    <v-footer app>
+    <!-- <v-footer app>
       <v-spacer></v-spacer>
       <span>NuxtJs Indonesia &copy; 2018</span>
-    </v-footer>
+    </v-footer> -->
   </v-app>
 </template>
 

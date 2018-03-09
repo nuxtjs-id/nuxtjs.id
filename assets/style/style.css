@@ -338,16 +338,16 @@ img.powered-by-algolia {
     margin-right:10px;
 }
 .nuxtid-class.basic,.nuxtid-class.intermediate,.nuxtid-class.expert {
+    -webkit-transition: all .1s ease-in-out;
     transition: all .1s ease-in-out;
     cursor:pointer;
 }
 .nuxtid-class.basic:hover,.nuxtid-class.intermediate:hover,.nuxtid-class.expert:hover {
-    transform: scale(1.03);
+    -webkit-transform: scale(1.03);
+            transform: scale(1.03);
 }
 .btn-open-right {
     display: none;
-}
-.right-view {
 }
 span.close-right-view {
     display: none;
@@ -615,6 +615,5 @@ span.close-right-view {
     white-space: nowrap;
     word-wrap: normal;
     direction: ltr;
-    -webkit-font-feature-settings: 'liga';
     -webkit-font-smoothing: antialiased;
   }

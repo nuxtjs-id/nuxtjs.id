@@ -447,7 +447,10 @@ span.close-right-view {
         height: 100%;
         background: #fafafa;
         z-index:12;
-    }    
+    }
+    .right-view.open > div.layout {
+        overflow-y: auto;
+    }
 }
 
 .loader-wrapper {

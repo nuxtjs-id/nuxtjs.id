@@ -40,8 +40,7 @@ module.exports = {
    */
   css: [
     '~/assets/style/app.styl',
-    '~/assets/style/style.css',
-    { src: '~/assets/scss/main.scss', lang: 'scss' }
+    '~/assets/style/style.css'
   ],
 
   /**

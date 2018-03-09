@@ -1,5 +1,10 @@
 <template>
   <v-app light class="nuxtid-no-main" v-resize="onResize" v-scroll="onScroll">
+    <v-fade-transition>
+      <div class="loader-wrapper" v-if="$store.state.splash">
+        <div id="loader"></div>
+      </div>
+    </v-fade-transition>
     <v-navigation-drawer
       :mini-variant="true"
       :clipped="false"
@@ -85,6 +90,7 @@
       let _self = this
       _self.onResize()
       _self.$store.state.isMobile ? _self.drawer = false : _self.drawer = true
+      _self.$store.dispatch('Req')
     },
     methods: {
       onResize () {

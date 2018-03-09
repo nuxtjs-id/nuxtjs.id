@@ -12,7 +12,7 @@ module.exports = {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' },
       { hid: 'keywords', name: 'keywords', content: 'nuxtjs,nuxtjs indonesia,nuxtjs.id,nuxtjs community indonesia,komunitas nuxtjs indonesia,indonesia,javascript' },
-      { hid: 'description', name: 'description', content: 'Nuxt.id - Komunitas NuxtJs Indonesia' },
+      { hid: 'description', name: 'description', content: 'Nuxtjs.id - Komunitas NuxtJs Indonesia' },
       { name: 'orientation', content: 'potrait' },
       { name: 'theme-color', content: '#fafafa' },
       { name: 'msapplication-tap-highlight', content: 'no' },
@@ -34,6 +34,13 @@ module.exports = {
    * Import Plugin
    */
   plugins: ['~/plugins/vuetify.js', {src: '~/plugins/algoliasearch.js'}],
+  modules: [
+    '@nuxtjs/axios'
+  ],
+
+  axios: {
+    // proxyHeaders: false
+  },
 
   /**
    * Import CSS

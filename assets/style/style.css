@@ -354,13 +354,25 @@ img.powered-by-algolia {
 span.close-right-view {
     display: none;
 }
-
-.fade-enter-active, .fade-leave-active {
-  -webkit-transition: opacity .5s;
-  transition: opacity .5s;
+.ais-index {
+    position: relative;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
+.ais-index > span.clear-input {
+    position: absolute;
+    display: inline-block;
+    bottom: 0px;
+    right: 0px;
+    border-radius: 0px 7px 7px 0px;
+    color: #fff;
+    height: 54px;
+    display: table;
+    cursor: pointer;
+}
+.ais-index > span.clear-input::after {
+    content: "Clear";
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0px 10px;
 }
 
 @media (max-width: 768px) {

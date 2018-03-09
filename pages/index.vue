@@ -11,7 +11,7 @@
             GABUNG SEKARANG
           </div>
         </v-flex>
-        <v-fade-transition>
+        <v-slide-y-reverse-transition>
         <v-flex xs12 class="search-result"
           v-show="!$store.state.isMobile || ($store.state.isMobile && ShowContent.active)"
         >
@@ -26,23 +26,26 @@
             </div>
           </div>
         </v-flex>
-        </v-fade-transition>
+        </v-slide-y-reverse-transition>
         <v-flex
           offset
           class="m"
           :class="{'px-3': !$store.state.isMobile, 'px-1': $store.state.isMobile, 'fh': AlgoliaQuery !== '' && !ShowContent.active}">
           <div class="p-relative">
 
+            <v-slide-y-reverse-transition>
             <div
               class="nuxtid-algolia-init elevation-1 white"  
               v-show="AlgoliaQuery === '' && !ShowContent.active"
             >
               Mulai jelajahi <strong>NuxtJs</strong>
             </div>
+            </v-slide-y-reverse-transition>
 
             <ais-index
               :search-store="searchStore"
               >
+              <v-slide-y-reverse-transition>
               <ais-results
                 class="mb-2"
                 v-show="AlgoliaQuery !== '' && !ShowContent.active"
@@ -56,6 +59,7 @@
                   </div>
                 </template>
               </ais-results>
+              </v-slide-y-reverse-transition>
               <ais-input
                 placeholder="contoh: nuxt"
                 class="nuxtid elevation-1"
@@ -64,6 +68,7 @@
               <a href="https://www.algolia.com" target="_blank" rel="noopener">
                 <img src="/img/icons/powered-by-algolia.svg" class="powered-by-algolia" alt="Algolia Search">
               </a>
+              <span class="clear-input" @click="searchStore.query = ''"></span>
             </ais-index>
 
           </div>
@@ -73,7 +78,7 @@
     <v-flex xs12 md1 py-4 v-show="!$store.state.isMobile">
       <div class="v-divider-v"></div>
     </v-flex>
-    <v-fade-transition>
+    <v-slide-y-reverse-transition>
     <v-flex xs12 md5 class="right-view open" v-if="!$store.state.isMobile || ($store.state.isMobile && OpenRight)">
       <v-layout row wrap>
         <v-flex xs12 pa-3 class="top-right">
@@ -126,7 +131,7 @@
         </v-flex>
       </v-layout>
     </v-flex>
-    </v-fade-transition>
+    </v-slide-y-reverse-transition>
   </v-layout>
 </template>
 

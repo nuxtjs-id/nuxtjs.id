@@ -43,7 +43,7 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar fixed app :clipped-left="true" class="elevation-0 nuxtid-no-bg" :class="{'elevation-3': $store.state.scrollTop > 32 && $store.state.isMobile}">
+    <v-toolbar fixed app :clipped-left="true" class="elevation-0 bg-white" :class="{'elevation-3': $store.state.scrollTop > 32 && $store.state.isMobile}">
       <v-toolbar-side-icon @click="drawer = !drawer" :class="{'ml-100': drawer === true }"></v-toolbar-side-icon>
       <v-spacer></v-spacer>
       <v-toolbar-title><nuxt-link :to="{name: 'index'}" class="green--text" :replace="$route.name !== 'index'">{{ title }}</nuxt-link></v-toolbar-title>

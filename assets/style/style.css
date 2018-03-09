@@ -86,6 +86,9 @@ a.list__tile--active > .list__tile__action > i.material-icons {
 .max-width {
     max-width:100%!important;
 }
+.bg-white {
+    background-color: #ffffff!important;
+}
 .r {
     border-radius:50%!important;
 }

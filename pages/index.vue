@@ -6,7 +6,7 @@
           <h1 class="nuxtid-header mb-2">
             NuxtJs <sub>Indonesia</sub>
           </h1>
-          <p class="pa-3 nuxtid-desc text-xs-right">Halo, <strong>Nuxter</strong> ...<br>Pelajari secara <strong class="f-n mr-1">mudah</strong> <strong class="f-b">NuxtJs</strong> disini</p>
+          <p class="pa-3 nuxtid-desc text-xs-right">Halo, <strong>Nuxter</strong><br>Pelajari secara <strong class="f-n mr-1">mudah</strong> <strong class="f-b">NuxtJs</strong> disini</p>
         </v-flex>
         <v-flex xs12>
           <div class="nuxtid-result-view"
@@ -20,14 +20,14 @@
             </div>
           </div>
         </v-flex>
-        <v-flex offset :class="{'px-3': !$store.state.isMobile, 'px-1': $store.state.isMobile}">
+        <v-flex offset class="m" :class="{'px-3': !$store.state.isMobile, 'px-1': $store.state.isMobile}">
           <div class="p-relative">
 
             <div
               class="nuxtid-algolia-init elevation-1 white"  
               v-show="AlgoliaQuery === '' && !ShowContent.active"
             >
-              Halo, kamu bisa menjelajahi <strong>NuxtJs</strong> disini.
+              Kamu bisa menjelajahi <strong>NuxtJs</strong> disini.
             </div>
 
             <ais-index

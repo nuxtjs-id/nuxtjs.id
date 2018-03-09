@@ -344,6 +344,33 @@ img.powered-by-algolia {
 .nuxtid-class.basic:hover,.nuxtid-class.intermediate:hover,.nuxtid-class.expert:hover {
     transform: scale(1.03);
 }
+
+@media (max-width: 768px) {
+    div.flex.m {
+        position: fixed;
+        bottom: 0px;
+        padding: 5px 0px;
+        left: 0px;
+        width: 100%;
+        background: #fafafa;
+        background: rgba(255,255,255,.9);
+        z-index: 10;
+    }
+    div.nuxtid-result-view {
+        position: fixed;
+        bottom:0px;
+        left: 0px;
+        height: 100%;
+        width: 100%;
+        overflow-y: auto;
+        z-index: 10;
+        padding-bottom: 100px!important;
+        background: #fafafa;
+        background: rgba(255,255,255,.9);
+    }
+}
+
+
 /* fallback */
 @font-face {
     font-family: 'Material Icons';

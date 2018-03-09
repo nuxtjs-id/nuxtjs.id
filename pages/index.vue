@@ -7,8 +7,14 @@
             NuxtJs <sub>Indonesia</sub>
           </h1>
           <p class="pa-3 nuxtid-desc text-xs-right">Halo, <strong>Nuxter</strong><br>Pelajari secara <strong class="f-n mr-1">mudah</strong> <strong class="f-b">NuxtJs</strong> disini</p>
+          <div class="btn-open-right r5" @click="OpenRight = true">
+            GABUNG SEKARANG
+          </div>
         </v-flex>
-        <v-flex xs12>
+        <v-fade-transition>
+        <v-flex xs12 class="search-result"
+          v-show="!$store.state.isMobile || ($store.state.isMobile && ShowContent.active)"
+        >
           <div class="nuxtid-result-view"
             :class="{'pa-1': $store.state.isMobile, 'pa-3': !$store.state.isMobile}"
             v-show="ShowContent.active"
@@ -20,6 +26,7 @@
             </div>
           </div>
         </v-flex>
+        </v-fade-transition>
         <v-flex offset class="m" :class="{'px-3': !$store.state.isMobile, 'px-1': $store.state.isMobile}">
           <div class="p-relative">
 
@@ -27,7 +34,7 @@
               class="nuxtid-algolia-init elevation-1 white"  
               v-show="AlgoliaQuery === '' && !ShowContent.active"
             >
-              Kamu bisa menjelajahi <strong>NuxtJs</strong> disini.
+              Mulai jelajahi <strong>NuxtJs</strong>
             </div>
 
             <ais-index
@@ -64,10 +71,12 @@
     <v-flex xs12 md1 py-4 v-show="!$store.state.isMobile">
       <div class="v-divider-v"></div>
     </v-flex>
-    <v-flex xs12 md5 v-show="!$store.state.isMobile">
+    <v-fade-transition>
+    <v-flex xs12 md5 class="right-view open" v-if="!$store.state.isMobile || ($store.state.isMobile && OpenRight)">
       <v-layout row wrap>
-        <v-flex xs12 pa-3>
-          <nuxt-link class="d-block mt-4 pa-4" :to="{name: 'class'}">
+        <v-flex xs12 pa-3 class="top-right">
+          <span class="close-right-view" @click="OpenRight = false">x</span>
+          <nuxt-link class="d-block mt-2 py-4 pl-0 pr-4" :to="{name: 'class'}">
             <span class="fs-18 mr-2">kelas</span> <strong class="fs-22 red--text mr-2">Gratis</strong>
             <strong style="font-size:22px;" class="red--text">NuxtJs</strong>
           </nuxt-link>
@@ -115,6 +124,7 @@
         </v-flex>
       </v-layout>
     </v-flex>
+    </v-fade-transition>
   </v-layout>
 </template>
 
@@ -136,7 +146,8 @@ export default {
         cid: '',
         title: '',
         content: ''
-      }
+      },
+      OpenRight: false
     }
   },
   mounted () {

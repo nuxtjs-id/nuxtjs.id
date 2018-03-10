@@ -93,8 +93,8 @@
       // if (process.env.NODE_ENV !== 'development') {
       //   navigator.onLine ? _self.$store.state.isOnline = true : _self.$store.state.isOnline = false
       // }
-      window.addEventListener('online', _self.networkChange)
-      window.addEventListener('offline', _self.networkChange)
+      // window.addEventListener('online', _self.networkChange)
+      // window.addEventListener('offline', _self.networkChange)
     },
     mounted () {
       let _self = this

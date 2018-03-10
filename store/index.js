@@ -2,6 +2,7 @@ export const strict = false
 
 export const state = () => ({
   splash: true,
+  isOnline: true,
   isMobile: false,
   scrollTop: 0,
   loading: {

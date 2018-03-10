@@ -456,6 +456,22 @@ span.close-right-view {
     vertical-align: middle;
     padding: 0px 10px;
 }
+label.connection {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  display: block;
+  padding: 10px;
+  color: #ffffff;
+  background: #ff0000;
+  background: rgba(255,0,0,.98);
+  font-size: 12px;
+  letter-spacing: 1px;
+  z-index: 1000;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
 
 @media (max-width: 768px) {
     #loader{

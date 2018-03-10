@@ -1,6 +1,11 @@
 <template>
   <v-app light class="nuxtid-no-main" v-resize="onResize" v-scroll="onScroll">
     <v-fade-transition>
+      <label class="connection" v-if="!$store.state.isOnline">
+        Ops, you are offline.<br>Please connect the network
+      </label>
+    </v-fade-transition>
+    <v-fade-transition>
       <div class="loader-wrapper" v-if="$store.state.splash">
         <div id="loader"></div>
       </div>
@@ -82,9 +87,15 @@
     created () {
       console.log('')
       console.log('---------------------------------------------------------------------------------------------------------------')
-      console.log('%c:: Love Code ? Let\'s join us!!! Send your best Portofolio to "nuxt@nuxtjs.id" ::', 'color: red; font-size:14px;font-weight:bold;')
+      console.log('%c:: Love Javascript ? Let\'s join us at "https://github.com/nuxtjs-id" ::', 'color: red; font-size:14px;font-weight:bold;')
       console.log('---------------------------------------------------------------------------------------------------------------')
       console.log('')
+      if (process.env.NODE_ENV !== 'development') {
+        navigator.onLine ? _self.$store.state.isOnline = true : _self.$store.state.isOnline = false
+
+        window.addEventListener('online', _self.networkChange)
+        window.addEventListener('offline', _self.networkChange)
+      }
     },
     mounted () {
       let _self = this
@@ -94,6 +105,14 @@
       _self.$store.dispatch('Req', { act: 'getMenus' })
     },
     methods: {
+      networkChange (e) {
+        let _self = this
+        if (e.type === 'offline') {
+          _self.$store.state.isOnline = false
+        } else {
+          _self.$store.state.isOnline = true
+        }
+      },
       onResize () {
         let _self = this
         _self.$store.state.isMobile = window.innerWidth < 769

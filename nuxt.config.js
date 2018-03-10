@@ -59,7 +59,7 @@ module.exports = {
    * Build configuration
    */
   build: {
-    vendor: [],
+    vendor: ['es6-promise/auto'],
     extractCSS: true,
     /*
     ** Run ESLint on save

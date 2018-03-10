@@ -90,7 +90,7 @@
       let _self = this
       _self.onResize()
       _self.$store.state.isMobile ? _self.drawer = false : _self.drawer = true
-      _self.$store.dispatch('Req')
+      _self.$store.commit('setSplash', false)
     },
     methods: {
       onResize () {

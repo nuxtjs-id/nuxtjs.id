@@ -53,9 +53,9 @@
                 <template slot-scope="{ result }">
                   <div
                     class="nuxtid-algolia-list elevation-1"
-                    @click="toggleShowContent(result.title)"
+                    @click="toggleShowContent(result.name, result.to)"
                   >
-                    {{ result.title }}
+                    {{ result.name }}
                   </div>
                 </template>
               </ais-results>
@@ -162,11 +162,17 @@ export default {
     _self.AlgoliaQuery = ''
   },
   methods: {
-    toggleShowContent (cid) {
+    toggleShowContent (title, slug) {
       let _self = this
-      _self.ShowContent.title = cid
-      _self.ShowContent.content = '<p>Sed ut perspiciatis unde omnis iste natusLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Sed ut perspiciatis unde omnis iste natusLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Sed ut perspiciatis unde omnis iste natusLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.</p>'
-      _self.ShowContent.active = true
+      _self.$store.dispatch('Req', { act: 'getContent', slug: slug })
+        .then((res) => {
+          _self.ShowContent.title = res.attrs.title
+          _self.ShowContent.content = res.body
+          _self.ShowContent.active = true
+        })
+        .catch(e => {
+          console.log(e)
+        })
     }
   },
   watch: {

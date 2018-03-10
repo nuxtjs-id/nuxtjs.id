@@ -92,7 +92,7 @@
     </v-flex>
     <v-slide-y-reverse-transition>
     <v-flex xs12 md5 class="right-view open" v-if="!$store.state.isMobile || ($store.state.isMobile && OpenRight)">
-      <v-layout row wrap>
+      <v-layout row wrap align-content-start>
         <v-flex xs12 pa-3 class="top-right">
           <span class="close-right-view" @click="OpenRight = false">x</span>
           <nuxt-link class="d-block mt-2 py-4 pl-0 pr-4" :to="{name: 'class'}">

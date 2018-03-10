@@ -25,7 +25,7 @@ a.list__tile--active > .list__tile__action > i.material-icons {
     background: #ffffff!important;
 }
 .z-max {
-    z-index: 100000000;
+    z-index: 20;
 }
 
 .navigation-drawer__border {
@@ -468,7 +468,7 @@ label.connection {
   background: rgba(255,0,0,.98);
   font-size: 12px;
   letter-spacing: 1px;
-  z-index: 1000;
+  z-index: 109;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }

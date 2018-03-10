@@ -99,10 +99,10 @@
     },
     mounted () {
       let _self = this
+      // _self.$store.dispatch('Req', { act: 'getMenus' })
       _self.onResize()
       _self.$store.state.isMobile ? _self.drawer = false : _self.drawer = true
       _self.$store.commit('setSplash', false)
-      _self.$store.dispatch('Req', { act: 'getMenus' })
     },
     methods: {
       networkChange (e) {

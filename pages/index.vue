@@ -80,7 +80,7 @@
               <a href="https://www.algolia.com" target="_blank" rel="noopener">
                 <img src="/img/icons/powered-by-algolia.svg" class="powered-by-algolia" alt="Algolia Search">
               </a>
-              <span class="clear-input" @click="searchStore.query = ''"></span>
+              <span v-if="searchStore.query !== ''" class="clear-input" @click="searchStore.query = ''"></span>
             </ais-index>
 
           </div>

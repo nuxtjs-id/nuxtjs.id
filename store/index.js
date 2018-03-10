@@ -9,8 +9,9 @@ export const state = () => ({
     left: '135px'
   },
   Apis: {
+    base: 'https://nuxtjs.org',
     menu: 'https://docs.api.nuxtjs.org/menu',
-    api_docs: 'https://docs.api.nuxtjs.org/id/api'
+    api_docs: 'https://docs.api.nuxtjs.org/id'
   },
   Docs: {
     menus: null
@@ -56,7 +57,7 @@ export const actions = {
           console.error('Error on [Req] action, please run the docs server.') // eslint-disable-line no-console
         }
         return resContent
-      case 'menus':
+      case 'getMenus':
         try {
           await _self.$axios.$get(state.Apis.menu + '/en')
             .then((response) => {
@@ -76,6 +77,8 @@ export const actions = {
                         keywords += keys
                       }
                     }
+                    response[key][i].links[j].sub = response[key][i].title
+                    response[key][i].links[j].sub_sub = key
                     response[key][i].links[j].contents = keywords
                     menus.push(response[key][i].links[j])
                   }

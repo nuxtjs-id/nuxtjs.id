@@ -91,6 +91,7 @@
       _self.onResize()
       _self.$store.state.isMobile ? _self.drawer = false : _self.drawer = true
       _self.$store.commit('setSplash', false)
+      _self.$store.dispatch('Req', { act: 'getMenus' })
     },
     methods: {
       onResize () {

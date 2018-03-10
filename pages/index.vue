@@ -19,8 +19,9 @@
             :class="{'pa-1': $store.state.isMobile, 'pa-3': !$store.state.isMobile}"
             v-show="ShowContent.active"
           >
-            <div class=" elevation-2 pa-2 white r5">
-              <div class="nuxtid-result-view-title c-pointer" @click="ShowContent.active = false"><v-icon class="fs-20 mr-2">arrow_back</v-icon> {{ ShowContent.title }}</div>
+            <div class="elevation-2 pa-2 white r5">
+              <div class="nuxtid-result-view-title c-pointer" @click="ShowContent.active = false"><v-icon class="fs-20 mr-2">arrow_back</v-icon></div>
+              <div class="nuxtid-result-view-head">{{ ShowContent.title }}</div>
               <div class="nuxtid-result-view-content" v-html="ShowContent.content"></div>
               <div class="nuxtid-result-view-title c-pointer" @click="ShowContent.active = false" v-if="$store.state.isMobile"><v-icon class="fs-20 mr-2">arrow_back</v-icon> Back</div>
             </div>
@@ -53,10 +54,21 @@
                 <template slot-scope="{ result }">
                   <div
                     class="nuxtid-algolia-list elevation-1"
-                    @click="toggleShowContent(result.name, result.to)"
+                    @click="toggleShowContent(result.name, result.to, result.sub, result.sub_sub)"
+                    v-if="result.sub_sub !== 'examples'"
                   >
-                    {{ result.name }}
+                    <strong>{{ result.sub_sub }}</strong>: {{ result.name }}
+                    <span>{{ result.sub }}</span>
                   </div>
+                  <a
+                    class="nuxtid-algolia-list elevation-1"
+                    :href="$store.state.Apis.base + '/' + result.sub_sub + result.to"
+                    target="_blank"
+                    v-else
+                  >
+                    <strong>{{ result.sub_sub }}</strong>: {{ result.name }}
+                    <span>{{ result.sub }}</span>
+                  </a>
                 </template>
               </ais-results>
               </v-slide-y-reverse-transition>
@@ -162,9 +174,9 @@ export default {
     _self.AlgoliaQuery = ''
   },
   methods: {
-    toggleShowContent (title, slug) {
+    toggleShowContent (title, slug, sub, sub_sub) {
       let _self = this
-      _self.$store.dispatch('Req', { act: 'getContent', slug: slug })
+      _self.$store.dispatch('Req', { act: 'getContent', slug: '/' + sub_sub + slug })
         .then((res) => {
           _self.ShowContent.title = res.attrs.title
           _self.ShowContent.content = res.body
